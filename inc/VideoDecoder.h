@@ -18,12 +18,16 @@
 #include <avio_mem_context.h>
 #include <unistd.h>
 
-using namespace std;
-
 #define DECODE_NO_NEXT_FRAME 	0
 #define DECODE_SUCCESS			1
 #define DECODE_FAILURE		 	2
 
+namespace cripac
+{
+
+/**
+ * The class VideoDecoder is a decoder for decoding video stored in memory.
+ */
 class VideoDecoder
 {
 private:
@@ -33,17 +37,17 @@ private:
 	SwsContext *pSWSCtx;
 	AvioMemContext* pAVIOCtx;
 	AVCodec *pCodec;
-	int videoindex = -1;
-	int numBytes = 0;
+	int videoindex;
+	int numBytes;
 	AVFrame *pFrame, *pFrameRGB;
 	uint8_t* frame;
 	int index;
 	AVPacket *packet;
 
 	//frame
-	int width = 0;
-	int height = 0;
-	int channels = 0;
+	int width;
+	int height;
+	int channels;
 public:
 	inline int getWidth() const
 	{
@@ -98,9 +102,9 @@ public:
 		}
 	}
 
-	inline VideoDecoder(const unsigned char *buffer, int buffer_len)
+	inline VideoDecoder(const unsigned char *video_buffer, int buffer_len)
 	{
-		if (buffer == NULL || buffer_len == 0)
+		if (video_buffer == NULL || buffer_len == 0)
 		{
 			printf("Error: Can't get video stream for HDFS. \n");
 			return;
@@ -111,7 +115,7 @@ public:
 		// Init.
 		avformat_network_init();
 		pFormatCtx = avformat_alloc_context();
-		pAVIOCtx = new AvioMemContext((char *) buffer, buffer_len);
+		pAVIOCtx = new AvioMemContext((char *) video_buffer, buffer_len);
 		printf("  ---- Hey, I am after avio_ctx()\n");
 		pAVIOCtx->setAVIO();
 		printf("  ---- Hey, I am after avio_ctx.setAVIO()!\n");
@@ -142,7 +146,7 @@ public:
 		}
 		if (videoindex == -1)
 		{
-			printf("Didn't find a video stream.\n");
+			fprintf(stderr, "Cannot find a video stream.\n");
 			avformat_free_context(pFormatCtx);
 			return;
 		}
@@ -176,8 +180,6 @@ public:
 		channels = 3;
 		index = 0;
 		packet = (AVPacket *) av_malloc(sizeof(AVPacket));
-
-		cout << "Construction finished!" << endl;
 	}
 
 	//TODU: Release.
@@ -193,5 +195,7 @@ public:
 		delete pAVIOCtx;
 	}
 };
+
+}
 
 #endif // _VIDEO_DECODER_H_

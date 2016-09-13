@@ -4,16 +4,13 @@
 
 # Add inputs and outputs from these tool invocations to the build variables 
 CPP_SRCS += \
-../src/VideoDecoderJni.cpp \
-../src/VpeVideoDecoder.cpp 
+../src/VideoDecoderJni.cpp 
 
 OBJS += \
-./src/VideoDecoderJni.o \
-./src/VpeVideoDecoder.o 
+./src/VideoDecoderJni.o 
 
 CPP_DEPS += \
-./src/VideoDecoderJni.d \
-./src/VpeVideoDecoder.d 
+./src/VideoDecoderJni.d 
 
 
 # Each subdirectory must supply rules for building sources it contributes

@@ -8,6 +8,7 @@
 #include <VideoDecoder.h>
 
 using namespace std;
+using namespace cripac;
 
 JNIEXPORT jlong JNICALL Java_org_cripac_isee_vpe_util_Decoder_initialize(
 		JNIEnv *env, jobject obj, jbyteArray buffer)
