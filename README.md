@@ -9,3 +9,9 @@ It depends on FFMPEG. To build this tool, you should have libavcodec-dev, libavf
 ```shell
 sudo apt-get install libavcodec-dev libavformat-dev libavutil-dev libswscale-dev
 ```
+
+Also to test this tool, you should have libcv-dev:
+
+```shell
+sudo apt-get install libcv-dev
+```
