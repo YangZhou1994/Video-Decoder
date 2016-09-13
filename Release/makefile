@@ -38,19 +38,19 @@ endif
 # Add inputs and outputs from these tool invocations to the build variables 
 
 # All Target
-all: libmem-decoding.so
+all: libVideo-Decoder.so
 
 # Tool invocations
-libmem-decoding.so: $(OBJS) $(USER_OBJS)
+libVideo-Decoder.so: $(OBJS) $(USER_OBJS)
 	@echo 'Building target: $@'
 	@echo 'Invoking: GCC C++ Linker'
-	g++ -shared -o "libmem-decoding.so" $(OBJS) $(USER_OBJS) $(LIBS)
+	g++ -shared -o "libVideo-Decoder.so" $(OBJS) $(USER_OBJS) $(LIBS)
 	@echo 'Finished building target: $@'
 	@echo ' '
 
 # Other Targets
 clean:
-	-$(RM) $(LIBRARIES)$(CC_DEPS)$(C++_DEPS)$(C_UPPER_DEPS)$(CXX_DEPS)$(OBJS)$(CPP_DEPS)$(C_DEPS) libmem-decoding.so
+	-$(RM) $(LIBRARIES)$(CC_DEPS)$(C++_DEPS)$(C_UPPER_DEPS)$(CXX_DEPS)$(OBJS)$(CPP_DEPS)$(C_DEPS) libVideo-Decoder.so
 	-@echo ' '
 
 .PHONY: all clean dependents

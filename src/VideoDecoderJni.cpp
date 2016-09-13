@@ -3,9 +3,9 @@
 #include <cstring>
 #include <string>
 
-#include <VideoDecoder.h>
 #include "org_cripac_isee_vpe_util_Decoder.h"
 #include <jni.h>
+#include <VideoDecoder.h>
 
 using namespace std;
 
@@ -46,18 +46,21 @@ JNIEXPORT void JNICALL Java_org_cripac_isee_vpe_util_Decoder_free(JNIEnv *env,
 {
 	delete (VideoDecoder *) pointer;
 }
+
 JNIEXPORT jint JNICALL Java_org_cripac_isee_vpe_util_Decoder_getWidth(
 		JNIEnv *env, jobject obj, jlong pointer)
 {
 	VideoDecoder *p = (VideoDecoder *) pointer;
 	return p->getWidth();
 }
+
 JNIEXPORT jint JNICALL Java_org_cripac_isee_vpe_util_Decoder_getHeight(
 		JNIEnv *env, jobject obj, jlong pointer)
 {
 	VideoDecoder *p = (VideoDecoder *) pointer;
 	return p->getHeight();
 }
+
 JNIEXPORT jint JNICALL Java_org_cripac_isee_vpe_util_Decoder_getChannels(
 		JNIEnv *env, jobject obj, jlong pointer)
 {

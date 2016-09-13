@@ -4,5 +4,5 @@
 
 USER_OBJS :=
 
-LIBS := -lavcodec -lswscale -lavutil -lavformat
+LIBS :=
 

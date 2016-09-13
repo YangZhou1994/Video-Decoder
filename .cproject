@@ -34,6 +34,7 @@
 									<listOptionValue builtIn="false" value="/usr/lib/jvm/default-java/include/linux"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/Video-Decoder/inc}&quot;"/>
 								</option>
+								<option id="gnu.cpp.compiler.option.other.pic.273167427" superClass="gnu.cpp.compiler.option.other.pic" useByScannerDiscovery="false" value="true" valueType="boolean"/>
 								<inputType id="cdt.managedbuild.tool.gnu.cpp.compiler.input.533282707" superClass="cdt.managedbuild.tool.gnu.cpp.compiler.input"/>
 							</tool>
 							<tool id="cdt.managedbuild.tool.gnu.c.compiler.so.debug.1407438704" name="GCC C Compiler" superClass="cdt.managedbuild.tool.gnu.c.compiler.so.debug">
@@ -44,6 +45,7 @@
 									<listOptionValue builtIn="false" value="/usr/lib/jvm/default-java/include/linux"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/Video-Decoder/inc}&quot;"/>
 								</option>
+								<option id="gnu.c.compiler.option.misc.pic.1212752935" superClass="gnu.c.compiler.option.misc.pic" useByScannerDiscovery="false" value="true" valueType="boolean"/>
 								<inputType id="cdt.managedbuild.tool.gnu.c.compiler.input.36522097" superClass="cdt.managedbuild.tool.gnu.c.compiler.input"/>
 							</tool>
 							<tool id="cdt.managedbuild.tool.gnu.c.linker.so.debug.819814254" name="GCC C Linker" superClass="cdt.managedbuild.tool.gnu.c.linker.so.debug">
@@ -141,8 +143,8 @@
 									<listOptionValue builtIn="false" value="/usr/lib/jvm/default-java/include/linux"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/Video-Decoder/inc}&quot;"/>
 								</option>
-								<option id="gnu.cpp.compiler.option.dialect.std.1797477275" superClass="gnu.cpp.compiler.option.dialect.std" useByScannerDiscovery="true" value="gnu.cpp.compiler.dialect.default" valueType="enumerated"/>
-								<option id="gnu.cpp.compiler.option.other.pic.300259860" superClass="gnu.cpp.compiler.option.other.pic" useByScannerDiscovery="false" value="true" valueType="boolean"/>
+								<option id="gnu.cpp.compiler.option.dialect.std.1797477275" name="Language standard" superClass="gnu.cpp.compiler.option.dialect.std" useByScannerDiscovery="true" value="gnu.cpp.compiler.dialect.default" valueType="enumerated"/>
+								<option id="gnu.cpp.compiler.option.other.pic.300259860" name="Position Independent Code (-fPIC)" superClass="gnu.cpp.compiler.option.other.pic" useByScannerDiscovery="false" value="true" valueType="boolean"/>
 								<inputType id="cdt.managedbuild.tool.gnu.cpp.compiler.input.2098262134" superClass="cdt.managedbuild.tool.gnu.cpp.compiler.input"/>
 							</tool>
 							<tool id="cdt.managedbuild.tool.gnu.c.compiler.so.release.1944989729" name="GCC C Compiler" superClass="cdt.managedbuild.tool.gnu.c.compiler.so.release">

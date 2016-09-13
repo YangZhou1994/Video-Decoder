@@ -1,8 +1,10 @@
 /** \file vpe_decoder.h 
  */
 
-#ifndef _VPE_DECODER_H_
-#define _VPE_DECODER_H_
+#pragma once
+
+#ifndef _VIDEO_DECODER_H_
+#define _VIDEO_DECODER_H_
 
 #include <vector>
 #include <cstring>
@@ -18,6 +20,10 @@
 
 using namespace std;
 
+#define DECODE_NO_NEXT_FRAME 	0
+#define DECODE_SUCCESS			1
+#define DECODE_FAILURE		 	2
+
 class VideoDecoder
 {
 private:
@@ -27,7 +33,7 @@ private:
 	SwsContext *pSWSCtx;
 	AvioMemContext* pAVIOCtx;
 	AVCodec *pCodec;
-	int i = 0, videoindex = -1;
+	int videoindex = -1;
 	int numBytes = 0;
 	AVFrame *pFrame, *pFrameRGB;
 	uint8_t* frame;
@@ -57,18 +63,17 @@ public:
 	}
 
 	/**
-	 * @return 0: No next frame; 1: Next frame retrieved successfully.
+	 * @return 0: No next frame; 1: Next frame retrieved successfully; 2: Failed to decode.
 	 */
 	inline int nextFrame(unsigned char* frame_buf)
 	{
 		if (av_read_frame(pFormatCtx, packet) < 0)
-			return 0;
+			return DECODE_NO_NEXT_FRAME;
 
-		printf("  Decoding frame index: %d\n", index);
+		printf("Decoding frame index: %d\n", index);
 		index++;
 		if (packet->stream_index == videoindex)
 		{
-			//TODU: Resolve this.
 			int got_frame = 1;
 			int decoding_ret = avcodec_decode_video2(pCodecCtx, pFrame, &got_frame, packet);
 			printf("Got Frame=%d; Return value=%d\n", got_frame, decoding_ret);
@@ -78,23 +83,22 @@ public:
 				sws_scale(pSWSCtx, pFrame->data, pFrame->linesize, 0,
 						pCodecCtx->height, pFrameRGB->data,
 						pFrameRGB->linesize);
-				printf("  ==== i: %d\n", i);
-				i++;
 			}
+			av_free_packet(packet);
+
+			memcpy(frame_buf, pFrameRGB->data[0], getFrameSize());
+			return DECODE_SUCCESS;
 		}
 		else
 		{
-			printf("D fail\n");
-		}
-		av_free_packet(packet);
+			av_free_packet(packet);
 
-		memcpy(frame_buf, pFrameRGB->data[0], getFrameSize());
-		return 1;
+			printf("Failed to decode!\n");
+			return DECODE_FAILURE;
+		}
 	}
 
-	/*VideoDecoder(){
-	 }_*/
-	VideoDecoder(const unsigned char *buffer, int buffer_len)
+	inline VideoDecoder(const unsigned char *buffer, int buffer_len)
 	{
 		if (buffer == NULL || buffer_len == 0)
 		{
@@ -128,7 +132,7 @@ public:
 		}
 		// Obtain the video stream of the total set of streams.
 		videoindex = -1;
-		for (i = 0; i < (int) (pFormatCtx->nb_streams); ++i)
+		for (int i = 0; i < (int) (pFormatCtx->nb_streams); ++i)
 		{
 			if (pFormatCtx->streams[i]->codec->codec_type == AVMEDIA_TYPE_VIDEO)
 			{
@@ -170,7 +174,6 @@ public:
 		width = pCodecCtx->width;
 		height = pCodecCtx->height;
 		channels = 3;
-		i = 0;
 		index = 0;
 		packet = (AVPacket *) av_malloc(sizeof(AVPacket));
 
@@ -178,7 +181,7 @@ public:
 	}
 
 	//TODU: Release.
-	~VideoDecoder()
+	inline ~VideoDecoder()
 	{
 		sws_freeContext(pSWSCtx);
 		av_free(frame);
@@ -191,4 +194,4 @@ public:
 	}
 };
 
-#endif // _VPE_DECODER_H_
+#endif // _VIDEO_DECODER_H_
