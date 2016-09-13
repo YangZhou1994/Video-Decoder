@@ -27,7 +27,9 @@
 *.exe
 *.out
 *.app
-/Debug/
-/Release/
-/DebugTest/
-/ReleaseTest/
+/Debug/*
+/Release/*
+/DebugTest/*
+/ReleaseTest/*
+!makefile
+!*.mk
