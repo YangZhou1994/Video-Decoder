@@ -4,5 +4,5 @@
 
 USER_OBJS :=
 
-LIBS := -lavutil -lavformat -lavcodec -lswscale -lopencv_core -lopencv_highgui -lopencv_imgproc
+LIBS := -lavformat -lopencv_core -lopencv_highgui -lopencv_imgproc -lavutil -lavcodec -lswscale
 

@@ -27,9 +27,5 @@
 *.exe
 *.out
 *.app
-/Debug/*
-/Release/*
-/DebugTest/*
-/ReleaseTest/*
-!makefile
-!*.mk
+video_decoder
+video_decoder_test

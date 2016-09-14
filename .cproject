@@ -53,6 +53,15 @@
 							</tool>
 							<tool id="cdt.managedbuild.tool.gnu.cpp.linker.so.debug.1702291992" name="GCC C++ Linker" superClass="cdt.managedbuild.tool.gnu.cpp.linker.so.debug">
 								<option defaultValue="true" id="gnu.cpp.link.so.debug.option.shared.259371001" name="Shared (-shared)" superClass="gnu.cpp.link.so.debug.option.shared" valueType="boolean"/>
+								<option id="gnu.cpp.link.option.libs.2034495622" name="Libraries (-l)" superClass="gnu.cpp.link.option.libs" valueType="libs">
+									<listOptionValue builtIn="false" value="avformat"/>
+									<listOptionValue builtIn="false" value="opencv_core"/>
+									<listOptionValue builtIn="false" value="opencv_highgui"/>
+									<listOptionValue builtIn="false" value="opencv_imgproc"/>
+									<listOptionValue builtIn="false" value="avutil"/>
+									<listOptionValue builtIn="false" value="avcodec"/>
+									<listOptionValue builtIn="false" value="swscale"/>
+								</option>
 								<inputType id="cdt.managedbuild.tool.gnu.cpp.linker.input.1698808698" superClass="cdt.managedbuild.tool.gnu.cpp.linker.input">
 									<additionalInput kind="additionalinputdependency" paths="$(USER_OBJS)"/>
 									<additionalInput kind="additionalinput" paths="$(LIBS)"/>
@@ -65,117 +74,6 @@
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/video_decoder/inc}&quot;"/>
 								</option>
 								<inputType id="cdt.managedbuild.tool.gnu.assembler.input.2019121110" superClass="cdt.managedbuild.tool.gnu.assembler.input"/>
-							</tool>
-						</toolChain>
-					</folderInfo>
-				</configuration>
-			</storageModule>
-			<storageModule moduleId="org.eclipse.cdt.core.externalSettings"/>
-		</cconfiguration>
-		<cconfiguration id="cdt.managedbuild.config.gnu.so.release.1942722707">
-			<storageModule buildSystemId="org.eclipse.cdt.managedbuilder.core.configurationDataProvider" id="cdt.managedbuild.config.gnu.so.release.1942722707" moduleId="org.eclipse.cdt.core.settings" name="Release">
-				<externalSettings>
-					<externalSetting>
-						<entry flags="VALUE_WORKSPACE_PATH" kind="includePath" name="/Video-Decoder"/>
-						<entry flags="VALUE_WORKSPACE_PATH" kind="includePath" name="/video_decoder"/>
-						<entry flags="VALUE_WORKSPACE_PATH" kind="libraryPath" name="/Video-Decoder/Release"/>
-						<entry flags="VALUE_WORKSPACE_PATH" kind="libraryPath" name="/video_decoder/Release"/>
-						<entry flags="RESOLVED" kind="libraryFile" name="Video-Decoder" srcPrefixMapping="" srcRootPath=""/>
-						<entry flags="RESOLVED" kind="libraryFile" name="video_decoder" srcPrefixMapping="" srcRootPath=""/>
-					</externalSetting>
-				</externalSettings>
-				<extensions>
-					<extension id="org.eclipse.cdt.core.GNU_ELF" point="org.eclipse.cdt.core.BinaryParser"/>
-					<extension id="org.eclipse.cdt.core.GASErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
-					<extension id="org.eclipse.cdt.core.GmakeErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
-					<extension id="org.eclipse.cdt.core.GLDErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
-					<extension id="org.eclipse.cdt.core.CWDLocator" point="org.eclipse.cdt.core.ErrorParser"/>
-					<extension id="org.eclipse.cdt.core.GCCErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
-				</extensions>
-			</storageModule>
-			<storageModule moduleId="cdtBuildSystem" version="4.0.0">
-				<configuration artifactExtension="so" artifactName="${ProjName}" buildArtefactType="org.eclipse.cdt.build.core.buildArtefactType.sharedLib" buildProperties="org.eclipse.cdt.build.core.buildArtefactType=org.eclipse.cdt.build.core.buildArtefactType.sharedLib,org.eclipse.cdt.build.core.buildType=org.eclipse.cdt.build.core.buildType.release" cleanCommand="rm -rf" description="" id="cdt.managedbuild.config.gnu.so.release.1942722707" name="Release" parent="cdt.managedbuild.config.gnu.so.release">
-					<folderInfo id="cdt.managedbuild.config.gnu.so.release.1942722707." name="/" resourcePath="">
-						<toolChain id="cdt.managedbuild.toolchain.gnu.so.release.1818960638" name="Linux GCC" superClass="cdt.managedbuild.toolchain.gnu.so.release">
-							<targetPlatform id="cdt.managedbuild.target.gnu.platform.so.release.1014628946" name="Debug Platform" superClass="cdt.managedbuild.target.gnu.platform.so.release"/>
-							<builder buildPath="${workspace_loc:/Video-Decoder}/Release" id="cdt.managedbuild.target.gnu.builder.so.release.19997485" keepEnvironmentInBuildfile="false" managedBuildOn="true" name="Gnu Make Builder" superClass="cdt.managedbuild.target.gnu.builder.so.release"/>
-							<tool id="cdt.managedbuild.tool.gnu.archiver.base.1724824854" name="GCC Archiver" superClass="cdt.managedbuild.tool.gnu.archiver.base"/>
-							<tool id="cdt.managedbuild.tool.gnu.cpp.compiler.so.release.1271638577" name="GCC C++ Compiler" superClass="cdt.managedbuild.tool.gnu.cpp.compiler.so.release">
-								<option id="gnu.cpp.compiler.so.release.option.optimization.level.475306966" name="Optimization Level" superClass="gnu.cpp.compiler.so.release.option.optimization.level" useByScannerDiscovery="false" value="gnu.cpp.compiler.optimization.level.most" valueType="enumerated"/>
-								<option id="gnu.cpp.compiler.so.release.option.debugging.level.2041101665" name="Debug Level" superClass="gnu.cpp.compiler.so.release.option.debugging.level" useByScannerDiscovery="false" value="gnu.cpp.compiler.debugging.level.none" valueType="enumerated"/>
-								<option id="gnu.cpp.compiler.option.include.paths.1203463540" name="Include paths (-I)" superClass="gnu.cpp.compiler.option.include.paths" useByScannerDiscovery="false" valueType="includePath">
-									<listOptionValue builtIn="false" value="/usr/lib/jvm/default-java/include"/>
-									<listOptionValue builtIn="false" value="/usr/lib/jvm/default-java/include/linux"/>
-									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/video_decoder/inc}&quot;"/>
-								</option>
-								<option id="gnu.cpp.compiler.option.dialect.std.1797477275" name="Language standard" superClass="gnu.cpp.compiler.option.dialect.std" useByScannerDiscovery="true" value="gnu.cpp.compiler.dialect.default" valueType="enumerated"/>
-								<option id="gnu.cpp.compiler.option.other.pic.300259860" name="Position Independent Code (-fPIC)" superClass="gnu.cpp.compiler.option.other.pic" useByScannerDiscovery="false" value="true" valueType="boolean"/>
-								<inputType id="cdt.managedbuild.tool.gnu.cpp.compiler.input.2098262134" superClass="cdt.managedbuild.tool.gnu.cpp.compiler.input"/>
-							</tool>
-							<tool id="cdt.managedbuild.tool.gnu.c.compiler.so.release.1944989729" name="GCC C Compiler" superClass="cdt.managedbuild.tool.gnu.c.compiler.so.release">
-								<option defaultValue="gnu.c.optimization.level.most" id="gnu.c.compiler.so.release.option.optimization.level.145036397" name="Optimization Level" superClass="gnu.c.compiler.so.release.option.optimization.level" useByScannerDiscovery="false" valueType="enumerated"/>
-								<option id="gnu.c.compiler.so.release.option.debugging.level.1043995742" name="Debug Level" superClass="gnu.c.compiler.so.release.option.debugging.level" useByScannerDiscovery="false" value="gnu.c.debugging.level.none" valueType="enumerated"/>
-								<option id="gnu.c.compiler.option.include.paths.1668910033" name="Include paths (-I)" superClass="gnu.c.compiler.option.include.paths" useByScannerDiscovery="false" valueType="includePath">
-									<listOptionValue builtIn="false" value="/usr/lib/jvm/default-java/include"/>
-									<listOptionValue builtIn="false" value="/usr/lib/jvm/default-java/include/linux"/>
-									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/video_decoder/inc}&quot;"/>
-								</option>
-								<inputType id="cdt.managedbuild.tool.gnu.c.compiler.input.2089414207" superClass="cdt.managedbuild.tool.gnu.c.compiler.input"/>
-							</tool>
-							<tool id="cdt.managedbuild.tool.gnu.c.linker.so.release.157929239" name="GCC C Linker" superClass="cdt.managedbuild.tool.gnu.c.linker.so.release">
-								<option defaultValue="true" id="gnu.c.link.so.release.option.shared.1310641440" name="Shared (-shared)" superClass="gnu.c.link.so.release.option.shared" valueType="boolean"/>
-							</tool>
-							<tool id="cdt.managedbuild.tool.gnu.cpp.linker.so.release.1163977625" name="GCC C++ Linker" superClass="cdt.managedbuild.tool.gnu.cpp.linker.so.release">
-								<option defaultValue="true" id="gnu.cpp.link.so.release.option.shared.439176238" name="Shared (-shared)" superClass="gnu.cpp.link.so.release.option.shared" valueType="boolean"/>
-								<inputType id="cdt.managedbuild.tool.gnu.cpp.linker.input.1370465707" superClass="cdt.managedbuild.tool.gnu.cpp.linker.input">
-									<additionalInput kind="additionalinputdependency" paths="$(USER_OBJS)"/>
-									<additionalInput kind="additionalinput" paths="$(LIBS)"/>
-								</inputType>
-							</tool>
-							<tool id="cdt.managedbuild.tool.gnu.assembler.so.release.974181536" name="GCC Assembler" superClass="cdt.managedbuild.tool.gnu.assembler.so.release">
-								<option id="gnu.both.asm.option.include.paths.152071389" name="Include paths (-I)" superClass="gnu.both.asm.option.include.paths" valueType="includePath">
-									<listOptionValue builtIn="false" value="/usr/lib/jvm/default-java/include"/>
-									<listOptionValue builtIn="false" value="/usr/lib/jvm/default-java/include/linux"/>
-									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/video_decoder/inc}&quot;"/>
-								</option>
-								<inputType id="cdt.managedbuild.tool.gnu.assembler.input.575895770" superClass="cdt.managedbuild.tool.gnu.assembler.input"/>
-							</tool>
-						</toolChain>
-					</folderInfo>
-					<folderInfo id="cdt.managedbuild.config.gnu.so.release.1942722707.776519133" name="/" resourcePath="unittest">
-						<toolChain id="cdt.managedbuild.toolchain.gnu.so.release.403126637" name="Linux GCC" superClass="cdt.managedbuild.toolchain.gnu.so.release" unusedChildren="">
-							<targetPlatform id="cdt.managedbuild.target.gnu.platform.so.release" name="Debug Platform" superClass="cdt.managedbuild.target.gnu.platform.so.release"/>
-							<tool id="cdt.managedbuild.tool.gnu.archiver.base.122324459" name="GCC Archiver" superClass="cdt.managedbuild.tool.gnu.archiver.base.1724824854"/>
-							<tool id="cdt.managedbuild.tool.gnu.cpp.compiler.so.release.1494950081" name="GCC C++ Compiler" superClass="cdt.managedbuild.tool.gnu.cpp.compiler.so.release.1271638577">
-								<option id="gnu.cpp.compiler.option.include.paths.357063867" name="Include paths (-I)" superClass="gnu.cpp.compiler.option.include.paths" valueType="includePath">
-									<listOptionValue builtIn="false" value="/usr/lib/jvm/default-java/include"/>
-									<listOptionValue builtIn="false" value="/usr/lib/jvm/default-java/include/linux"/>
-									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/Video-Decoder/inc}&quot;"/>
-									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/Video-Decoder/unittest/include}&quot;"/>
-								</option>
-								<inputType id="cdt.managedbuild.tool.gnu.cpp.compiler.input.139110308" superClass="cdt.managedbuild.tool.gnu.cpp.compiler.input"/>
-							</tool>
-							<tool id="cdt.managedbuild.tool.gnu.c.compiler.so.release.862818976" name="GCC C Compiler" superClass="cdt.managedbuild.tool.gnu.c.compiler.so.release.1944989729">
-								<option id="gnu.c.compiler.option.include.paths.2045956818" name="Include paths (-I)" superClass="gnu.c.compiler.option.include.paths" valueType="includePath">
-									<listOptionValue builtIn="false" value="/usr/lib/jvm/default-java/include"/>
-									<listOptionValue builtIn="false" value="/usr/lib/jvm/default-java/include/linux"/>
-									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/Video-Decoder/inc}&quot;"/>
-									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/Video-Decoder/unittest/include}&quot;"/>
-									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/Video-Decoder/unittest/include/jpeg}&quot;"/>
-								</option>
-								<inputType id="cdt.managedbuild.tool.gnu.c.compiler.input.356645448" superClass="cdt.managedbuild.tool.gnu.c.compiler.input"/>
-							</tool>
-							<tool id="cdt.managedbuild.tool.gnu.c.linker.so.release.1800844604" name="GCC C Linker" superClass="cdt.managedbuild.tool.gnu.c.linker.so.release.157929239"/>
-							<tool id="cdt.managedbuild.tool.gnu.cpp.linker.so.release.1962623260" name="GCC C++ Linker" superClass="cdt.managedbuild.tool.gnu.cpp.linker.so.release.1163977625"/>
-							<tool id="cdt.managedbuild.tool.gnu.assembler.so.release.1852121659" name="GCC Assembler" superClass="cdt.managedbuild.tool.gnu.assembler.so.release.974181536">
-								<option id="gnu.both.asm.option.include.paths.1360668907" name="Include paths (-I)" superClass="gnu.both.asm.option.include.paths" valueType="includePath">
-									<listOptionValue builtIn="false" value="/usr/lib/jvm/default-java/include"/>
-									<listOptionValue builtIn="false" value="/usr/lib/jvm/default-java/include/linux"/>
-									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/Video-Decoder/inc}&quot;"/>
-									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/Video-Decoder/unittest/include}&quot;"/>
-									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/Video-Decoder/unittest/include/jpeg}&quot;"/>
-								</option>
-								<inputType id="cdt.managedbuild.tool.gnu.assembler.input.787034345" superClass="cdt.managedbuild.tool.gnu.assembler.input"/>
 							</tool>
 						</toolChain>
 					</folderInfo>
@@ -237,14 +135,14 @@
 							</tool>
 							<tool id="cdt.managedbuild.tool.gnu.cpp.linker.so.debug.749399251" name="GCC C++ Linker" superClass="cdt.managedbuild.tool.gnu.cpp.linker.so.debug">
 								<option defaultValue="true" id="gnu.cpp.link.so.debug.option.shared.720490683" name="Shared (-shared)" superClass="gnu.cpp.link.so.debug.option.shared" useByScannerDiscovery="false" value="false" valueType="boolean"/>
-								<option id="gnu.cpp.link.option.libs.358550420" superClass="gnu.cpp.link.option.libs" useByScannerDiscovery="false" valueType="libs">
-									<listOptionValue builtIn="false" value="avutil"/>
+								<option id="gnu.cpp.link.option.libs.358550420" name="Libraries (-l)" superClass="gnu.cpp.link.option.libs" useByScannerDiscovery="false" valueType="libs">
 									<listOptionValue builtIn="false" value="avformat"/>
-									<listOptionValue builtIn="false" value="avcodec"/>
-									<listOptionValue builtIn="false" value="swscale"/>
 									<listOptionValue builtIn="false" value="opencv_core"/>
 									<listOptionValue builtIn="false" value="opencv_highgui"/>
 									<listOptionValue builtIn="false" value="opencv_imgproc"/>
+									<listOptionValue builtIn="false" value="avutil"/>
+									<listOptionValue builtIn="false" value="avcodec"/>
+									<listOptionValue builtIn="false" value="swscale"/>
 								</option>
 								<inputType id="cdt.managedbuild.tool.gnu.cpp.linker.input.784016634" superClass="cdt.managedbuild.tool.gnu.cpp.linker.input">
 									<additionalInput kind="additionalinputdependency" paths="$(USER_OBJS)"/>
@@ -319,14 +217,14 @@
 							</tool>
 							<tool id="cdt.managedbuild.tool.gnu.cpp.linker.so.release.1332279586" name="GCC C++ Linker" superClass="cdt.managedbuild.tool.gnu.cpp.linker.so.release">
 								<option defaultValue="true" id="gnu.cpp.link.so.release.option.shared.1060165354" name="Shared (-shared)" superClass="gnu.cpp.link.so.release.option.shared" useByScannerDiscovery="false" value="false" valueType="boolean"/>
-								<option id="gnu.cpp.link.option.libs.131964648" superClass="gnu.cpp.link.option.libs" valueType="libs">
-									<listOptionValue builtIn="false" value="avutil"/>
+								<option id="gnu.cpp.link.option.libs.131964648" name="Libraries (-l)" superClass="gnu.cpp.link.option.libs" useByScannerDiscovery="false" valueType="libs">
 									<listOptionValue builtIn="false" value="avformat"/>
-									<listOptionValue builtIn="false" value="avcodec"/>
-									<listOptionValue builtIn="false" value="swscale"/>
 									<listOptionValue builtIn="false" value="opencv_core"/>
 									<listOptionValue builtIn="false" value="opencv_highgui"/>
 									<listOptionValue builtIn="false" value="opencv_imgproc"/>
+									<listOptionValue builtIn="false" value="avutil"/>
+									<listOptionValue builtIn="false" value="avcodec"/>
+									<listOptionValue builtIn="false" value="swscale"/>
 								</option>
 								<inputType id="cdt.managedbuild.tool.gnu.cpp.linker.input.199785089" superClass="cdt.managedbuild.tool.gnu.cpp.linker.input">
 									<additionalInput kind="additionalinputdependency" paths="$(USER_OBJS)"/>
@@ -378,6 +276,123 @@
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/Video-Decoder/unittest/include/jpeg}&quot;"/>
 								</option>
 								<inputType id="cdt.managedbuild.tool.gnu.assembler.input.1313491749" superClass="cdt.managedbuild.tool.gnu.assembler.input"/>
+							</tool>
+						</toolChain>
+					</folderInfo>
+				</configuration>
+			</storageModule>
+			<storageModule moduleId="org.eclipse.cdt.core.externalSettings"/>
+		</cconfiguration>
+		<cconfiguration id="cdt.managedbuild.config.gnu.so.release.1942722707.2066294071">
+			<storageModule buildSystemId="org.eclipse.cdt.managedbuilder.core.configurationDataProvider" id="cdt.managedbuild.config.gnu.so.release.1942722707.2066294071" moduleId="org.eclipse.cdt.core.settings" name="Release">
+				<externalSettings>
+					<externalSetting>
+						<entry flags="VALUE_WORKSPACE_PATH" kind="includePath" name="/video_decoder"/>
+						<entry flags="VALUE_WORKSPACE_PATH" kind="libraryPath" name="/video_decoder/Rel"/>
+						<entry flags="RESOLVED" kind="libraryFile" name="video_decoder" srcPrefixMapping="" srcRootPath=""/>
+					</externalSetting>
+				</externalSettings>
+				<extensions>
+					<extension id="org.eclipse.cdt.core.GNU_ELF" point="org.eclipse.cdt.core.BinaryParser"/>
+					<extension id="org.eclipse.cdt.core.GASErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+					<extension id="org.eclipse.cdt.core.GmakeErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+					<extension id="org.eclipse.cdt.core.GLDErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+					<extension id="org.eclipse.cdt.core.CWDLocator" point="org.eclipse.cdt.core.ErrorParser"/>
+					<extension id="org.eclipse.cdt.core.GCCErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+				</extensions>
+			</storageModule>
+			<storageModule moduleId="cdtBuildSystem" version="4.0.0">
+				<configuration artifactExtension="so" artifactName="${ProjName}" buildArtefactType="org.eclipse.cdt.build.core.buildArtefactType.sharedLib" buildProperties="org.eclipse.cdt.build.core.buildArtefactType=org.eclipse.cdt.build.core.buildArtefactType.sharedLib,org.eclipse.cdt.build.core.buildType=org.eclipse.cdt.build.core.buildType.release" cleanCommand="rm -rf" description="" id="cdt.managedbuild.config.gnu.so.release.1942722707.2066294071" name="Release" parent="cdt.managedbuild.config.gnu.so.release">
+					<folderInfo id="cdt.managedbuild.config.gnu.so.release.1942722707.2066294071." name="/" resourcePath="">
+						<toolChain id="cdt.managedbuild.toolchain.gnu.so.release.1370656151" name="Linux GCC" superClass="cdt.managedbuild.toolchain.gnu.so.release">
+							<targetPlatform id="cdt.managedbuild.target.gnu.platform.so.release.20707813" name="Debug Platform" superClass="cdt.managedbuild.target.gnu.platform.so.release"/>
+							<builder buildPath="${workspace_loc:/Video-Decoder}/Release" id="cdt.managedbuild.target.gnu.builder.so.release.1274196924" keepEnvironmentInBuildfile="false" managedBuildOn="true" name="Gnu Make Builder" superClass="cdt.managedbuild.target.gnu.builder.so.release"/>
+							<tool id="cdt.managedbuild.tool.gnu.archiver.base.23032671" name="GCC Archiver" superClass="cdt.managedbuild.tool.gnu.archiver.base"/>
+							<tool id="cdt.managedbuild.tool.gnu.cpp.compiler.so.release.1699074648" name="GCC C++ Compiler" superClass="cdt.managedbuild.tool.gnu.cpp.compiler.so.release">
+								<option id="gnu.cpp.compiler.so.release.option.optimization.level.88603281" name="Optimization Level" superClass="gnu.cpp.compiler.so.release.option.optimization.level" useByScannerDiscovery="false" value="gnu.cpp.compiler.optimization.level.most" valueType="enumerated"/>
+								<option id="gnu.cpp.compiler.so.release.option.debugging.level.68794419" name="Debug Level" superClass="gnu.cpp.compiler.so.release.option.debugging.level" useByScannerDiscovery="false" value="gnu.cpp.compiler.debugging.level.none" valueType="enumerated"/>
+								<option id="gnu.cpp.compiler.option.include.paths.1737775118" name="Include paths (-I)" superClass="gnu.cpp.compiler.option.include.paths" useByScannerDiscovery="false" valueType="includePath">
+									<listOptionValue builtIn="false" value="/usr/lib/jvm/default-java/include"/>
+									<listOptionValue builtIn="false" value="/usr/lib/jvm/default-java/include/linux"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/video_decoder/inc}&quot;"/>
+								</option>
+								<option id="gnu.cpp.compiler.option.dialect.std.150926172" name="Language standard" superClass="gnu.cpp.compiler.option.dialect.std" useByScannerDiscovery="true" value="gnu.cpp.compiler.dialect.default" valueType="enumerated"/>
+								<option id="gnu.cpp.compiler.option.other.pic.1700693945" name="Position Independent Code (-fPIC)" superClass="gnu.cpp.compiler.option.other.pic" useByScannerDiscovery="false" value="true" valueType="boolean"/>
+								<inputType id="cdt.managedbuild.tool.gnu.cpp.compiler.input.1661015258" superClass="cdt.managedbuild.tool.gnu.cpp.compiler.input"/>
+							</tool>
+							<tool id="cdt.managedbuild.tool.gnu.c.compiler.so.release.708692688" name="GCC C Compiler" superClass="cdt.managedbuild.tool.gnu.c.compiler.so.release">
+								<option defaultValue="gnu.c.optimization.level.most" id="gnu.c.compiler.so.release.option.optimization.level.989534435" name="Optimization Level" superClass="gnu.c.compiler.so.release.option.optimization.level" useByScannerDiscovery="false" valueType="enumerated"/>
+								<option id="gnu.c.compiler.so.release.option.debugging.level.193533382" name="Debug Level" superClass="gnu.c.compiler.so.release.option.debugging.level" useByScannerDiscovery="false" value="gnu.c.debugging.level.none" valueType="enumerated"/>
+								<option id="gnu.c.compiler.option.include.paths.1701610383" name="Include paths (-I)" superClass="gnu.c.compiler.option.include.paths" useByScannerDiscovery="false" valueType="includePath">
+									<listOptionValue builtIn="false" value="/usr/lib/jvm/default-java/include"/>
+									<listOptionValue builtIn="false" value="/usr/lib/jvm/default-java/include/linux"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/video_decoder/inc}&quot;"/>
+								</option>
+								<inputType id="cdt.managedbuild.tool.gnu.c.compiler.input.1420665164" superClass="cdt.managedbuild.tool.gnu.c.compiler.input"/>
+							</tool>
+							<tool id="cdt.managedbuild.tool.gnu.c.linker.so.release.1812950477" name="GCC C Linker" superClass="cdt.managedbuild.tool.gnu.c.linker.so.release">
+								<option defaultValue="true" id="gnu.c.link.so.release.option.shared.1195943426" name="Shared (-shared)" superClass="gnu.c.link.so.release.option.shared" valueType="boolean"/>
+							</tool>
+							<tool id="cdt.managedbuild.tool.gnu.cpp.linker.so.release.659414576" name="GCC C++ Linker" superClass="cdt.managedbuild.tool.gnu.cpp.linker.so.release">
+								<option defaultValue="true" id="gnu.cpp.link.so.release.option.shared.731315535" name="Shared (-shared)" superClass="gnu.cpp.link.so.release.option.shared" valueType="boolean"/>
+								<option id="gnu.cpp.link.option.libs.561977990" name="Libraries (-l)" superClass="gnu.cpp.link.option.libs" useByScannerDiscovery="false" valueType="libs">
+									<listOptionValue builtIn="false" value="avformat"/>
+									<listOptionValue builtIn="false" value="opencv_core"/>
+									<listOptionValue builtIn="false" value="opencv_highgui"/>
+									<listOptionValue builtIn="false" value="opencv_imgproc"/>
+									<listOptionValue builtIn="false" value="avutil"/>
+									<listOptionValue builtIn="false" value="avcodec"/>
+									<listOptionValue builtIn="false" value="swscale"/>
+								</option>
+								<inputType id="cdt.managedbuild.tool.gnu.cpp.linker.input.595581390" superClass="cdt.managedbuild.tool.gnu.cpp.linker.input">
+									<additionalInput kind="additionalinputdependency" paths="$(USER_OBJS)"/>
+									<additionalInput kind="additionalinput" paths="$(LIBS)"/>
+								</inputType>
+							</tool>
+							<tool id="cdt.managedbuild.tool.gnu.assembler.so.release.703994851" name="GCC Assembler" superClass="cdt.managedbuild.tool.gnu.assembler.so.release">
+								<option id="gnu.both.asm.option.include.paths.375378527" name="Include paths (-I)" superClass="gnu.both.asm.option.include.paths" valueType="includePath">
+									<listOptionValue builtIn="false" value="/usr/lib/jvm/default-java/include"/>
+									<listOptionValue builtIn="false" value="/usr/lib/jvm/default-java/include/linux"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/video_decoder/inc}&quot;"/>
+								</option>
+								<inputType id="cdt.managedbuild.tool.gnu.assembler.input.926177109" superClass="cdt.managedbuild.tool.gnu.assembler.input"/>
+							</tool>
+						</toolChain>
+					</folderInfo>
+					<folderInfo id="cdt.managedbuild.config.gnu.so.release.1942722707.2066294071.unittest" name="/" resourcePath="unittest">
+						<toolChain id="cdt.managedbuild.toolchain.gnu.so.release.736737724" name="Linux GCC" superClass="cdt.managedbuild.toolchain.gnu.so.release" unusedChildren="">
+							<targetPlatform id="cdt.managedbuild.target.gnu.platform.so.release.298102645" name="Debug Platform" superClass="cdt.managedbuild.target.gnu.platform.so.release"/>
+							<tool id="cdt.managedbuild.tool.gnu.archiver.base.152510276" name="GCC Archiver" superClass="cdt.managedbuild.tool.gnu.archiver.base.23032671"/>
+							<tool id="cdt.managedbuild.tool.gnu.cpp.compiler.so.release.1697813278" name="GCC C++ Compiler" superClass="cdt.managedbuild.tool.gnu.cpp.compiler.so.release.1699074648">
+								<option id="gnu.cpp.compiler.option.include.paths.162540240" name="Include paths (-I)" superClass="gnu.cpp.compiler.option.include.paths" valueType="includePath">
+									<listOptionValue builtIn="false" value="/usr/lib/jvm/default-java/include"/>
+									<listOptionValue builtIn="false" value="/usr/lib/jvm/default-java/include/linux"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/Video-Decoder/inc}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/Video-Decoder/unittest/include}&quot;"/>
+								</option>
+								<inputType id="cdt.managedbuild.tool.gnu.cpp.compiler.input.2025966405" superClass="cdt.managedbuild.tool.gnu.cpp.compiler.input"/>
+							</tool>
+							<tool id="cdt.managedbuild.tool.gnu.c.compiler.so.release.113388072" name="GCC C Compiler" superClass="cdt.managedbuild.tool.gnu.c.compiler.so.release.708692688">
+								<option id="gnu.c.compiler.option.include.paths.1460002194" name="Include paths (-I)" superClass="gnu.c.compiler.option.include.paths" valueType="includePath">
+									<listOptionValue builtIn="false" value="/usr/lib/jvm/default-java/include"/>
+									<listOptionValue builtIn="false" value="/usr/lib/jvm/default-java/include/linux"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/Video-Decoder/inc}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/Video-Decoder/unittest/include}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/Video-Decoder/unittest/include/jpeg}&quot;"/>
+								</option>
+								<inputType id="cdt.managedbuild.tool.gnu.c.compiler.input.1888261183" superClass="cdt.managedbuild.tool.gnu.c.compiler.input"/>
+							</tool>
+							<tool id="cdt.managedbuild.tool.gnu.c.linker.so.release.405521959" name="GCC C Linker" superClass="cdt.managedbuild.tool.gnu.c.linker.so.release.1812950477"/>
+							<tool id="cdt.managedbuild.tool.gnu.cpp.linker.so.release.339356318" name="GCC C++ Linker" superClass="cdt.managedbuild.tool.gnu.cpp.linker.so.release.659414576"/>
+							<tool id="cdt.managedbuild.tool.gnu.assembler.so.release.1730471723" name="GCC Assembler" superClass="cdt.managedbuild.tool.gnu.assembler.so.release.703994851">
+								<option id="gnu.both.asm.option.include.paths.646547171" name="Include paths (-I)" superClass="gnu.both.asm.option.include.paths" valueType="includePath">
+									<listOptionValue builtIn="false" value="/usr/lib/jvm/default-java/include"/>
+									<listOptionValue builtIn="false" value="/usr/lib/jvm/default-java/include/linux"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/Video-Decoder/inc}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/Video-Decoder/unittest/include}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/Video-Decoder/unittest/include/jpeg}&quot;"/>
+								</option>
+								<inputType id="cdt.managedbuild.tool.gnu.assembler.input.818871602" superClass="cdt.managedbuild.tool.gnu.assembler.input"/>
 							</tool>
 						</toolChain>
 					</folderInfo>
