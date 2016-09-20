@@ -13,5 +13,5 @@ sudo apt-get install libavcodec-dev libavformat-dev libavutil-dev libswscale-dev
 Also to test this tool, you should have libcv-dev:
 
 ```shell
-sudo apt-get install libcv-dev
+sudo apt-get install libopencv-dev
 ```
