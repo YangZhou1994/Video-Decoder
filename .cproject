@@ -31,8 +31,8 @@
 								<option id="gnu.cpp.compiler.so.debug.option.debugging.level.1268938901" name="Debug Level" superClass="gnu.cpp.compiler.so.debug.option.debugging.level" useByScannerDiscovery="false" value="gnu.cpp.compiler.debugging.level.max" valueType="enumerated"/>
 								<option id="gnu.cpp.compiler.option.include.paths.2024545835" name="Include paths (-I)" superClass="gnu.cpp.compiler.option.include.paths" useByScannerDiscovery="false" valueType="includePath">
 									<listOptionValue builtIn="false" value="/usr/lib/jvm/default-java/include"/>
+									<listOptionValue builtIn="false" value="../inc"/>
 									<listOptionValue builtIn="false" value="/usr/lib/jvm/default-java/include/linux"/>
-									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/video_decoder/inc}&quot;"/>
 								</option>
 								<option id="gnu.cpp.compiler.option.other.pic.273167427" name="Position Independent Code (-fPIC)" superClass="gnu.cpp.compiler.option.other.pic" useByScannerDiscovery="false" value="true" valueType="boolean"/>
 								<inputType id="cdt.managedbuild.tool.gnu.cpp.compiler.input.533282707" superClass="cdt.managedbuild.tool.gnu.cpp.compiler.input"/>
@@ -42,8 +42,8 @@
 								<option id="gnu.c.compiler.so.debug.option.debugging.level.1208147400" name="Debug Level" superClass="gnu.c.compiler.so.debug.option.debugging.level" useByScannerDiscovery="false" value="gnu.c.debugging.level.max" valueType="enumerated"/>
 								<option id="gnu.c.compiler.option.include.paths.1477929461" name="Include paths (-I)" superClass="gnu.c.compiler.option.include.paths" useByScannerDiscovery="false" valueType="includePath">
 									<listOptionValue builtIn="false" value="/usr/lib/jvm/default-java/include"/>
+									<listOptionValue builtIn="false" value="../inc"/>
 									<listOptionValue builtIn="false" value="/usr/lib/jvm/default-java/include/linux"/>
-									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/video_decoder/inc}&quot;"/>
 								</option>
 								<option id="gnu.c.compiler.option.misc.pic.1212752935" name="Position Independent Code (-fPIC)" superClass="gnu.c.compiler.option.misc.pic" useByScannerDiscovery="false" value="true" valueType="boolean"/>
 								<inputType id="cdt.managedbuild.tool.gnu.c.compiler.input.36522097" superClass="cdt.managedbuild.tool.gnu.c.compiler.input"/>
@@ -111,8 +111,8 @@
 								<option id="gnu.cpp.compiler.so.debug.option.debugging.level.2101328819" name="Debug Level" superClass="gnu.cpp.compiler.so.debug.option.debugging.level" useByScannerDiscovery="false" value="gnu.cpp.compiler.debugging.level.max" valueType="enumerated"/>
 								<option id="gnu.cpp.compiler.option.include.paths.1508547829" name="Include paths (-I)" superClass="gnu.cpp.compiler.option.include.paths" useByScannerDiscovery="false" valueType="includePath">
 									<listOptionValue builtIn="false" value="/usr/lib/jvm/default-java/include"/>
+									<listOptionValue builtIn="false" value="../inc"/>
 									<listOptionValue builtIn="false" value="/usr/lib/jvm/default-java/include/linux"/>
-									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/video_decoder/inc}&quot;"/>
 								</option>
 								<option id="gnu.cpp.compiler.option.other.pic.1530074481" name="Position Independent Code (-fPIC)" superClass="gnu.cpp.compiler.option.other.pic" useByScannerDiscovery="false" value="false" valueType="boolean"/>
 								<option id="gnu.cpp.compiler.option.dialect.std.860361177" name="Language standard" superClass="gnu.cpp.compiler.option.dialect.std" useByScannerDiscovery="true" value="gnu.cpp.compiler.dialect.default" valueType="enumerated"/>
@@ -123,8 +123,8 @@
 								<option id="gnu.c.compiler.so.debug.option.debugging.level.859633346" name="Debug Level" superClass="gnu.c.compiler.so.debug.option.debugging.level" useByScannerDiscovery="false" value="gnu.c.debugging.level.max" valueType="enumerated"/>
 								<option id="gnu.c.compiler.option.include.paths.1261409392" name="Include paths (-I)" superClass="gnu.c.compiler.option.include.paths" useByScannerDiscovery="false" valueType="includePath">
 									<listOptionValue builtIn="false" value="/usr/lib/jvm/default-java/include"/>
+									<listOptionValue builtIn="false" value="../inc"/>
 									<listOptionValue builtIn="false" value="/usr/lib/jvm/default-java/include/linux"/>
-									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/video_decoder/inc}&quot;"/>
 								</option>
 								<option id="gnu.c.compiler.option.misc.pic.1967238141" name="Position Independent Code (-fPIC)" superClass="gnu.c.compiler.option.misc.pic" useByScannerDiscovery="false" value="false" valueType="boolean"/>
 								<option id="gnu.c.compiler.option.dialect.std.559164689" name="Language standard" superClass="gnu.c.compiler.option.dialect.std" useByScannerDiscovery="true" value="gnu.c.compiler.dialect.default" valueType="enumerated"/>
@@ -194,8 +194,8 @@
 								<option id="gnu.cpp.compiler.so.release.option.debugging.level.1788250604" name="Debug Level" superClass="gnu.cpp.compiler.so.release.option.debugging.level" useByScannerDiscovery="false" value="gnu.cpp.compiler.debugging.level.none" valueType="enumerated"/>
 								<option id="gnu.cpp.compiler.option.include.paths.856304389" name="Include paths (-I)" superClass="gnu.cpp.compiler.option.include.paths" useByScannerDiscovery="false" valueType="includePath">
 									<listOptionValue builtIn="false" value="/usr/lib/jvm/default-java/include"/>
+									<listOptionValue builtIn="false" value="../inc"/>
 									<listOptionValue builtIn="false" value="/usr/lib/jvm/default-java/include/linux"/>
-									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/video_decoder/inc}&quot;"/>
 								</option>
 								<option id="gnu.cpp.compiler.option.dialect.std.904423994" name="Language standard" superClass="gnu.cpp.compiler.option.dialect.std" useByScannerDiscovery="true" value="gnu.cpp.compiler.dialect.default" valueType="enumerated"/>
 								<option id="gnu.cpp.compiler.option.other.pic.286360566" name="Position Independent Code (-fPIC)" superClass="gnu.cpp.compiler.option.other.pic" useByScannerDiscovery="false" value="false" valueType="boolean"/>
@@ -206,8 +206,8 @@
 								<option id="gnu.c.compiler.so.release.option.debugging.level.2127300099" name="Debug Level" superClass="gnu.c.compiler.so.release.option.debugging.level" useByScannerDiscovery="false" value="gnu.c.debugging.level.none" valueType="enumerated"/>
 								<option id="gnu.c.compiler.option.include.paths.1038868045" name="Include paths (-I)" superClass="gnu.c.compiler.option.include.paths" useByScannerDiscovery="false" valueType="includePath">
 									<listOptionValue builtIn="false" value="/usr/lib/jvm/default-java/include"/>
+									<listOptionValue builtIn="false" value="../inc"/>
 									<listOptionValue builtIn="false" value="/usr/lib/jvm/default-java/include/linux"/>
-									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/video_decoder/inc}&quot;"/>
 								</option>
 								<option id="gnu.c.compiler.option.dialect.std.1908181414" name="Language standard" superClass="gnu.c.compiler.option.dialect.std" useByScannerDiscovery="true" value="gnu.c.compiler.dialect.default" valueType="enumerated"/>
 								<inputType id="cdt.managedbuild.tool.gnu.c.compiler.input.887796785" superClass="cdt.managedbuild.tool.gnu.c.compiler.input"/>
@@ -313,8 +313,8 @@
 								<option id="gnu.cpp.compiler.so.release.option.debugging.level.68794419" name="Debug Level" superClass="gnu.cpp.compiler.so.release.option.debugging.level" useByScannerDiscovery="false" value="gnu.cpp.compiler.debugging.level.none" valueType="enumerated"/>
 								<option id="gnu.cpp.compiler.option.include.paths.1737775118" name="Include paths (-I)" superClass="gnu.cpp.compiler.option.include.paths" useByScannerDiscovery="false" valueType="includePath">
 									<listOptionValue builtIn="false" value="/usr/lib/jvm/default-java/include"/>
+									<listOptionValue builtIn="false" value="../inc"/>
 									<listOptionValue builtIn="false" value="/usr/lib/jvm/default-java/include/linux"/>
-									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/video_decoder/inc}&quot;"/>
 								</option>
 								<option id="gnu.cpp.compiler.option.dialect.std.150926172" name="Language standard" superClass="gnu.cpp.compiler.option.dialect.std" useByScannerDiscovery="true" value="gnu.cpp.compiler.dialect.default" valueType="enumerated"/>
 								<option id="gnu.cpp.compiler.option.other.pic.1700693945" name="Position Independent Code (-fPIC)" superClass="gnu.cpp.compiler.option.other.pic" useByScannerDiscovery="false" value="true" valueType="boolean"/>
@@ -325,8 +325,8 @@
 								<option id="gnu.c.compiler.so.release.option.debugging.level.193533382" name="Debug Level" superClass="gnu.c.compiler.so.release.option.debugging.level" useByScannerDiscovery="false" value="gnu.c.debugging.level.none" valueType="enumerated"/>
 								<option id="gnu.c.compiler.option.include.paths.1701610383" name="Include paths (-I)" superClass="gnu.c.compiler.option.include.paths" useByScannerDiscovery="false" valueType="includePath">
 									<listOptionValue builtIn="false" value="/usr/lib/jvm/default-java/include"/>
+									<listOptionValue builtIn="false" value="../inc"/>
 									<listOptionValue builtIn="false" value="/usr/lib/jvm/default-java/include/linux"/>
-									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/video_decoder/inc}&quot;"/>
 								</option>
 								<inputType id="cdt.managedbuild.tool.gnu.c.compiler.input.1420665164" superClass="cdt.managedbuild.tool.gnu.c.compiler.input"/>
 							</tool>
