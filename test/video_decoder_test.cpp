@@ -1,9 +1,29 @@
+/***************************************************************************
+ *  This file is part of Video-Decoder.
+ *
+ *  Video-Decoder is free software: you can redistribute it and/or modify
+ *  it under the terms of the GNU General Public License as published by
+ *  the Free Software Foundation, either version 3 of the License, or
+ *  (at your option) any later version.
+ *
+ *  Video-Decoder is distributed in the hope that it will be useful,
+ *  but WITHOUT ANY WARRANTY; without even the implied warranty of
+ *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ *  GNU General Public License for more details.
+ *
+ *  You should have received a copy of the GNU General Public License
+ *  along with Video-Decoder.  If not, see <http://www.gnu.org/licenses/>.
+ ***************************************************************************/
+
 #include <iostream>
 #include <cstdio>
+#include <cassert>
 
 #include <sys/stat.h>
 
-#include <opencv2/opencv.hpp>
+#include <opencv2/core/core.hpp>
+#include <opencv2/highgui/highgui.hpp>
+#include <opencv2/imgproc/imgproc.hpp>
 
 #include <video_decoder.hpp>
 
@@ -54,14 +74,14 @@ int main(int argc, char* argv[])
 
 	// Test memory leak.
 	AVIOContextManager* manager;
-	for (int i = 0; i < 100000; ++i)
+	for (int i = 0; i < 10000; ++i)
 	{
 		manager = new AVIOContextManager(video_buf, video_size, 32768000);
 		delete manager;
 		printf("Allocated AVIOContextManager %d times!\n", i + 1);
 	}
 
-	for (int i = 0; i < 10000; ++i)
+	for (int i = 0; i < 1000; ++i)
 	{
 		decoder = new VideoDecoder(video_buf, video_size);
 		delete decoder;

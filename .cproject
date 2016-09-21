@@ -34,7 +34,7 @@
 								<option id="gnu.cpp.compiler.so.debug.option.debugging.level.1268938901" name="Debug Level" superClass="gnu.cpp.compiler.so.debug.option.debugging.level" useByScannerDiscovery="false" value="gnu.cpp.compiler.debugging.level.max" valueType="enumerated"/>
 								<option id="gnu.cpp.compiler.option.include.paths.2024545835" name="Include paths (-I)" superClass="gnu.cpp.compiler.option.include.paths" useByScannerDiscovery="false" valueType="includePath">
 									<listOptionValue builtIn="false" value="/usr/lib/jvm/default-java/include"/>
-									<listOptionValue builtIn="false" value="../inc"/>
+									<listOptionValue builtIn="false" value="../include"/>
 									<listOptionValue builtIn="false" value="/usr/lib/jvm/default-java/include/linux"/>
 								</option>
 								<option id="gnu.cpp.compiler.option.other.pic.273167427" name="Position Independent Code (-fPIC)" superClass="gnu.cpp.compiler.option.other.pic" useByScannerDiscovery="false" value="true" valueType="boolean"/>
@@ -45,7 +45,7 @@
 								<option id="gnu.c.compiler.so.debug.option.debugging.level.1208147400" name="Debug Level" superClass="gnu.c.compiler.so.debug.option.debugging.level" useByScannerDiscovery="false" value="gnu.c.debugging.level.max" valueType="enumerated"/>
 								<option id="gnu.c.compiler.option.include.paths.1477929461" name="Include paths (-I)" superClass="gnu.c.compiler.option.include.paths" useByScannerDiscovery="false" valueType="includePath">
 									<listOptionValue builtIn="false" value="/usr/lib/jvm/default-java/include"/>
-									<listOptionValue builtIn="false" value="../inc"/>
+									<listOptionValue builtIn="false" value="../include"/>
 									<listOptionValue builtIn="false" value="/usr/lib/jvm/default-java/include/linux"/>
 								</option>
 								<option id="gnu.c.compiler.option.misc.pic.1212752935" name="Position Independent Code (-fPIC)" superClass="gnu.c.compiler.option.misc.pic" useByScannerDiscovery="false" value="true" valueType="boolean"/>
@@ -80,15 +80,6 @@
 							</tool>
 						</toolChain>
 					</folderInfo>
-					<fileInfo id="cdt.managedbuild.config.gnu.so.debug.51236359.1619589913" name="video_decoder_test.cpp" rcbsApplicability="disable" resourcePath="test/video_decoder_test.cpp" toolsToInvoke="cdt.managedbuild.tool.gnu.cpp.compiler.so.debug.506162490.452022007">
-						<tool id="cdt.managedbuild.tool.gnu.cpp.compiler.so.debug.506162490.452022007" name="GCC C++ Compiler" superClass="cdt.managedbuild.tool.gnu.cpp.compiler.so.debug.506162490"/>
-						<tool customBuildStep="true" id="org.eclipse.cdt.managedbuilder.ui.rcbs.195332341" name="Resource Custom Build Step">
-							<inputType id="org.eclipse.cdt.managedbuilder.ui.rcbs.inputtype.1242635317" name="Resource Custom Build Step Input Type">
-								<additionalInput kind="additionalinputdependency" paths=""/>
-							</inputType>
-							<outputType id="org.eclipse.cdt.managedbuilder.ui.rcbs.outputtype.975431843" name="Resource Custom Build Step Output Type"/>
-						</tool>
-					</fileInfo>
 					<sourceEntries>
 						<entry excluding="test/video_decoder_test.cpp" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name=""/>
 					</sourceEntries>
@@ -126,7 +117,7 @@
 								<option id="gnu.cpp.compiler.so.debug.option.debugging.level.2101328819" name="Debug Level" superClass="gnu.cpp.compiler.so.debug.option.debugging.level" useByScannerDiscovery="false" value="gnu.cpp.compiler.debugging.level.max" valueType="enumerated"/>
 								<option id="gnu.cpp.compiler.option.include.paths.1508547829" name="Include paths (-I)" superClass="gnu.cpp.compiler.option.include.paths" useByScannerDiscovery="false" valueType="includePath">
 									<listOptionValue builtIn="false" value="/usr/lib/jvm/default-java/include"/>
-									<listOptionValue builtIn="false" value="../inc"/>
+									<listOptionValue builtIn="false" value="../include"/>
 									<listOptionValue builtIn="false" value="/usr/lib/jvm/default-java/include/linux"/>
 								</option>
 								<option id="gnu.cpp.compiler.option.other.pic.1530074481" name="Position Independent Code (-fPIC)" superClass="gnu.cpp.compiler.option.other.pic" useByScannerDiscovery="false" value="false" valueType="boolean"/>
@@ -138,7 +129,7 @@
 								<option id="gnu.c.compiler.so.debug.option.debugging.level.859633346" name="Debug Level" superClass="gnu.c.compiler.so.debug.option.debugging.level" useByScannerDiscovery="false" value="gnu.c.debugging.level.max" valueType="enumerated"/>
 								<option id="gnu.c.compiler.option.include.paths.1261409392" name="Include paths (-I)" superClass="gnu.c.compiler.option.include.paths" useByScannerDiscovery="false" valueType="includePath">
 									<listOptionValue builtIn="false" value="/usr/lib/jvm/default-java/include"/>
-									<listOptionValue builtIn="false" value="../inc"/>
+									<listOptionValue builtIn="false" value="../include"/>
 									<listOptionValue builtIn="false" value="/usr/lib/jvm/default-java/include/linux"/>
 								</option>
 								<option id="gnu.c.compiler.option.misc.pic.1967238141" name="Position Independent Code (-fPIC)" superClass="gnu.c.compiler.option.misc.pic" useByScannerDiscovery="false" value="false" valueType="boolean"/>
@@ -209,7 +200,7 @@
 								<option id="gnu.cpp.compiler.so.release.option.debugging.level.1788250604" name="Debug Level" superClass="gnu.cpp.compiler.so.release.option.debugging.level" useByScannerDiscovery="false" value="gnu.cpp.compiler.debugging.level.none" valueType="enumerated"/>
 								<option id="gnu.cpp.compiler.option.include.paths.856304389" name="Include paths (-I)" superClass="gnu.cpp.compiler.option.include.paths" useByScannerDiscovery="false" valueType="includePath">
 									<listOptionValue builtIn="false" value="/usr/lib/jvm/default-java/include"/>
-									<listOptionValue builtIn="false" value="../inc"/>
+									<listOptionValue builtIn="false" value="../include"/>
 									<listOptionValue builtIn="false" value="/usr/lib/jvm/default-java/include/linux"/>
 								</option>
 								<option id="gnu.cpp.compiler.option.dialect.std.904423994" name="Language standard" superClass="gnu.cpp.compiler.option.dialect.std" useByScannerDiscovery="true" value="gnu.cpp.compiler.dialect.default" valueType="enumerated"/>
@@ -221,7 +212,7 @@
 								<option id="gnu.c.compiler.so.release.option.debugging.level.2127300099" name="Debug Level" superClass="gnu.c.compiler.so.release.option.debugging.level" useByScannerDiscovery="false" value="gnu.c.debugging.level.none" valueType="enumerated"/>
 								<option id="gnu.c.compiler.option.include.paths.1038868045" name="Include paths (-I)" superClass="gnu.c.compiler.option.include.paths" useByScannerDiscovery="false" valueType="includePath">
 									<listOptionValue builtIn="false" value="/usr/lib/jvm/default-java/include"/>
-									<listOptionValue builtIn="false" value="../inc"/>
+									<listOptionValue builtIn="false" value="../include"/>
 									<listOptionValue builtIn="false" value="/usr/lib/jvm/default-java/include/linux"/>
 								</option>
 								<option id="gnu.c.compiler.option.dialect.std.1908181414" name="Language standard" superClass="gnu.c.compiler.option.dialect.std" useByScannerDiscovery="true" value="gnu.c.compiler.dialect.default" valueType="enumerated"/>
@@ -257,9 +248,6 @@
 							</tool>
 						</toolChain>
 					</folderInfo>
-					<fileInfo id="cdt.managedbuild.config.gnu.so.release.1942722707.385955838.311900112" name="video_decoder_test.cpp" rcbsApplicability="disable" resourcePath="test/video_decoder_test.cpp" toolsToInvoke="cdt.managedbuild.tool.gnu.cpp.compiler.so.release.1068071918.1428444880">
-						<tool id="cdt.managedbuild.tool.gnu.cpp.compiler.so.release.1068071918.1428444880" name="GCC C++ Compiler" superClass="cdt.managedbuild.tool.gnu.cpp.compiler.so.release.1068071918"/>
-					</fileInfo>
 					<folderInfo id="cdt.managedbuild.config.gnu.so.release.1942722707.385955838.unittest" name="/" resourcePath="unittest">
 						<toolChain id="cdt.managedbuild.toolchain.gnu.so.release.705736183" name="Linux GCC" superClass="cdt.managedbuild.toolchain.gnu.so.release" unusedChildren="">
 							<targetPlatform id="cdt.managedbuild.target.gnu.platform.so.release.794331183" name="Debug Platform" superClass="cdt.managedbuild.target.gnu.platform.so.release"/>
@@ -332,7 +320,7 @@
 								<option id="gnu.cpp.compiler.so.release.option.debugging.level.68794419" name="Debug Level" superClass="gnu.cpp.compiler.so.release.option.debugging.level" useByScannerDiscovery="false" value="gnu.cpp.compiler.debugging.level.none" valueType="enumerated"/>
 								<option id="gnu.cpp.compiler.option.include.paths.1737775118" name="Include paths (-I)" superClass="gnu.cpp.compiler.option.include.paths" useByScannerDiscovery="false" valueType="includePath">
 									<listOptionValue builtIn="false" value="/usr/lib/jvm/default-java/include"/>
-									<listOptionValue builtIn="false" value="../inc"/>
+									<listOptionValue builtIn="false" value="../include"/>
 									<listOptionValue builtIn="false" value="/usr/lib/jvm/default-java/include/linux"/>
 								</option>
 								<option id="gnu.cpp.compiler.option.dialect.std.150926172" name="Language standard" superClass="gnu.cpp.compiler.option.dialect.std" useByScannerDiscovery="true" value="gnu.cpp.compiler.dialect.default" valueType="enumerated"/>
@@ -344,9 +332,10 @@
 								<option id="gnu.c.compiler.so.release.option.debugging.level.193533382" name="Debug Level" superClass="gnu.c.compiler.so.release.option.debugging.level" useByScannerDiscovery="false" value="gnu.c.debugging.level.none" valueType="enumerated"/>
 								<option id="gnu.c.compiler.option.include.paths.1701610383" name="Include paths (-I)" superClass="gnu.c.compiler.option.include.paths" useByScannerDiscovery="false" valueType="includePath">
 									<listOptionValue builtIn="false" value="/usr/lib/jvm/default-java/include"/>
-									<listOptionValue builtIn="false" value="../inc"/>
+									<listOptionValue builtIn="false" value="../include"/>
 									<listOptionValue builtIn="false" value="/usr/lib/jvm/default-java/include/linux"/>
 								</option>
+								<option id="gnu.c.compiler.option.misc.pic.1698728258" superClass="gnu.c.compiler.option.misc.pic" useByScannerDiscovery="false" value="true" valueType="boolean"/>
 								<inputType id="cdt.managedbuild.tool.gnu.c.compiler.input.1420665164" superClass="cdt.managedbuild.tool.gnu.c.compiler.input"/>
 							</tool>
 							<tool id="cdt.managedbuild.tool.gnu.c.linker.so.release.1812950477" name="GCC C Linker" superClass="cdt.managedbuild.tool.gnu.c.linker.so.release">
@@ -378,15 +367,6 @@
 							</tool>
 						</toolChain>
 					</folderInfo>
-					<fileInfo id="cdt.managedbuild.config.gnu.so.release.1942722707.2066294071.2027935801" name="video_decoder_test.cpp" rcbsApplicability="disable" resourcePath="test/video_decoder_test.cpp" toolsToInvoke="cdt.managedbuild.tool.gnu.cpp.compiler.so.release.1699074648.1766828826">
-						<tool id="cdt.managedbuild.tool.gnu.cpp.compiler.so.release.1699074648.1766828826" name="GCC C++ Compiler" superClass="cdt.managedbuild.tool.gnu.cpp.compiler.so.release.1699074648"/>
-						<tool customBuildStep="true" id="org.eclipse.cdt.managedbuilder.ui.rcbs.985261719" name="Resource Custom Build Step">
-							<inputType id="org.eclipse.cdt.managedbuilder.ui.rcbs.inputtype.1324717725" name="Resource Custom Build Step Input Type">
-								<additionalInput kind="additionalinputdependency" paths=""/>
-							</inputType>
-							<outputType id="org.eclipse.cdt.managedbuilder.ui.rcbs.outputtype.401599261" name="Resource Custom Build Step Output Type"/>
-						</tool>
-					</fileInfo>
 					<folderInfo id="cdt.managedbuild.config.gnu.so.release.1942722707.2066294071.unittest" name="/" resourcePath="unittest">
 						<toolChain id="cdt.managedbuild.toolchain.gnu.so.release.736737724" name="Linux GCC" superClass="cdt.managedbuild.toolchain.gnu.so.release" unusedChildren="">
 							<targetPlatform id="cdt.managedbuild.target.gnu.platform.so.release.298102645" name="Debug Platform" superClass="cdt.managedbuild.target.gnu.platform.so.release"/>

@@ -31,7 +31,6 @@
 /test_bin/
 
 # CMake intermediate files
-*.cmake
 Makefile
 CMakeFiles/
 CMakeCache.txt
