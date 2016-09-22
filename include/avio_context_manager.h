@@ -46,6 +46,15 @@ extern "C"
 #include <algorithm>
 #include <cassert>
 
+/**
+ * Adaption to lower version of AVCodec.
+ */
+#if LIBAVCODEC_VERSION_INT < AV_VERSION_INT(55,28,1)
+#define av_frame_alloc avcodec_alloc_frame
+#define av_frame_free av_free
+#define AV_PIX_FMT_BGR24 PIX_FMT_BGR24
+#endif
+
 namespace videodecoder
 {
 /**
@@ -65,7 +74,8 @@ public:
 	inline AVIOContextManager(const unsigned char* video_stream, const int64_t stream_len, size_t buf_size = 32768) :
 			pos(0),
 			video_stream(video_stream),
-			stream_len(stream_len)
+			stream_len(stream_len),
+			ctx(NULL)
 	{
 		unsigned char* buffer = (unsigned char*) av_malloc(buf_size);
 		if (NULL == buffer)
@@ -163,7 +173,7 @@ private:
 	const unsigned char* video_stream;
 	int64_t stream_len;
 
-	AVIOContext* ctx = NULL;
+	AVIOContext* ctx;
 };
 }
 

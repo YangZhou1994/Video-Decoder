@@ -2,7 +2,7 @@ enable_testing ()
 
 add_executable (video_decoder_test video_decoder_test.cpp )
 
-target_include_directories (video_decoder_test PUBLIC ${PROJECT_SOURCE_DIR}/inc)
+target_include_directories (video_decoder_test PUBLIC ${PROJECT_SOURCE_DIR}/include)
 
 target_link_libraries (video_decoder_test avutil avformat avcodec swscale opencv_core opencv_highgui opencv_imgproc)
 
