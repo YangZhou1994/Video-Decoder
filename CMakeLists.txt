@@ -4,7 +4,7 @@ project (video_decoder)
 
 option (BUILD_TEST "Whether to build test program." OFF)
 
-set (JAVA_HOME $ENV{JAVA_HOME} CACHE PATH "Home directory of Java Divelooment Toolkit (JDK)." FORCE)
+set (JAVA_HOME $ENV{JAVA_HOME} CACHE PATH "Home directory of Java Divelooment Toolkit (JDK).")
  
 add_subdirectory (jni bin)
 

@@ -1,4 +1,4 @@
-# Install script for directory: /home/ken/Documents/LaS-VPE Platform/Video-Decoder
+# Install script for directory: /home/ken.yu/Documents/LaS-VPE Platform/Video-Decoder
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -33,17 +33,16 @@ if(NOT DEFINED CMAKE_INSTALL_SO_NO_EXE)
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/include/video_decoder" TYPE FILE FILES "/home/ken/Documents/LaS-VPE Platform/Video-Decoder/inc/video_decoder.hpp")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/include/video_decoder" TYPE FILE FILES "/home/ken.yu/Documents/LaS-VPE Platform/Video-Decoder/inc/video_decoder.hpp")
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/include/video_decoder" TYPE FILE FILES "/home/ken/Documents/LaS-VPE Platform/Video-Decoder/inc/avio_context_manager.h")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/include/video_decoder" TYPE FILE FILES "/home/ken.yu/Documents/LaS-VPE Platform/Video-Decoder/inc/avio_context_manager.h")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
-  include("/home/ken/Documents/LaS-VPE Platform/Video-Decoder/bin/cmake_install.cmake")
-  include("/home/ken/Documents/LaS-VPE Platform/Video-Decoder/test_bin/cmake_install.cmake")
+  include("/home/ken.yu/Documents/LaS-VPE Platform/Video-Decoder/bin/cmake_install.cmake")
 
 endif()
 
@@ -55,5 +54,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/home/ken/Documents/LaS-VPE Platform/Video-Decoder/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/home/ken.yu/Documents/LaS-VPE Platform/Video-Decoder/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")
