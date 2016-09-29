@@ -29,6 +29,7 @@
 #include <cstdlib>
 #include <cstring>
 #include <iostream>
+#include <cassert>
 
 #include <unistd.h>
 
@@ -52,7 +53,8 @@ class VideoDecoder {
   AVCodec *codec_;
   AVFrame *frame_raw_, *frame_rgb_;
   uint8_t *frame_;
-  AVPacket *packet_;
+
+  AVPacket packet_;
   int video_ind_;
 
   inline void clean() {
@@ -98,9 +100,9 @@ class VideoDecoder {
    */
   inline int SkipFrame(int num_frames = 1) {
     for (int i = 0; i < num_frames; ++i) {
-      if (av_read_frame(avformat_context_, packet_) < 0)
+      if (av_read_frame(avformat_context_, &packet_) < 0)
         return DECODE_NO_NEXT_FRAME;
-      av_free_packet(packet_);
+      av_free_packet(&packet_);
     }
     return DECODE_SUCCESS;
   }
@@ -108,30 +110,28 @@ class VideoDecoder {
   /**
    * @brief Get the next frame_ of the video.
    * @param frame_buf	Buffer for storing the bytes of the frame_.
-   * @return 0: Next frame retrieved successfully; -1: No next frame_; -2: Failed to decode.
+   * @return 0 on success,
+   *        -1 when there is no next frame,
+   *        -2 or a negative AVERROR on failure.
    */
   inline int NextFrame(unsigned char *frame_buf) {
     // Read a frame to the packet_.
-    if (av_read_frame(avformat_context_, packet_) < 0) {
-      av_free_packet(packet_);
+    if (av_read_frame(avformat_context_, &packet_) < 0) {
+      av_free_packet(&packet_);
       return DECODE_NO_NEXT_FRAME;
     }
 
-    if (packet_->stream_index == video_ind_) {
+    if (packet_.stream_index == video_ind_) {
       int got_picture = 1;
-      int ret = avcodec_decode_video2(codec_context_, frame_raw_, &got_picture, packet_);
-      av_free_packet(packet_);
-      if (ret < 0)
-        return DECODE_FAILURE;
-
-      /*
-       * Seems like some videos have some fake frames preceeding,
-       * and when decoding them, the frame_number field of AVCodecContext
-       * will not increase.
-       * TODO Confirm this.
-       */
-      if (!codec_context_->frame_number)
-        return NextFrame(frame_buf);
+      // TODO: Change to use avcodec_send_packet and avcodec_receive_frame asynchronously.
+      int ret = avcodec_decode_video2(codec_context_, frame_raw_, &got_picture, &packet_);
+      av_free_packet(&packet_);
+      if (ret < 0) {
+        char err_str[100];
+        av_strerror(ret, err_str, 100);
+        fprintf(stderr, "Error %d (%s) while decoding!\n", ret, err_str);
+        return ret;
+      }
 
       if (got_picture)
         sws_scale(sws_context_, frame_raw_->data, frame_raw_->linesize, 0,
@@ -141,7 +141,7 @@ class VideoDecoder {
       memcpy(frame_buf, frame_rgb_->data[0], getFrameSize());
       return DECODE_SUCCESS;
     } else {
-      av_free_packet(packet_);
+      av_free_packet(&packet_);
       fprintf(stderr, "Failed to decode!\n");
       return DECODE_FAILURE;
     }
@@ -165,7 +165,6 @@ class VideoDecoder {
     frame_raw_ = NULL;
     frame_rgb_ = NULL;
     frame_ = NULL;
-    packet_ = NULL;
   }
 
   /**
@@ -231,7 +230,7 @@ class VideoDecoder {
                                   codec_context_->pix_fmt, codec_context_->width, codec_context_->height,
                                   AV_PIX_FMT_BGR24, SWS_BICUBIC, NULL, NULL, NULL);
 
-    packet_ = (AVPacket *) av_malloc(sizeof(AVPacket));
+    av_init_packet(&packet_);
 
     return DECODE_SUCCESS;
   }

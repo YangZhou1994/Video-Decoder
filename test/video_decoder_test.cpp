@@ -59,7 +59,7 @@ int main(int argc, char *argv[]) {
         printf("Stop displaying, but continue to decode for counting frames...\n");
         display = false;
         destroyWindow("OpenCV");
-        break;
+        //break;
       }
     }
   }

@@ -77,6 +77,8 @@ class AVIOContextManager {
     if (NULL == buffer)
       throw std::bad_alloc();
 
+    // Here we use our own seek function, but seems like setting it as NULL also works.
+    // TODO: If any problem occurs, please check here.
     ctx = avio_alloc_context(buffer, buf_size, 0, this, &AVIOContextManager::read_packet, NULL, seek);
     if (NULL == ctx) {
       av_free(buffer);
@@ -133,6 +135,12 @@ class AVIOContextManager {
   static int64_t seek(void *opaque, int64_t offset, int whence) {
     // Recover the AVIO context.
     AVIOContextManager *avio_ctx = (AVIOContextManager *) opaque;
+
+    // Sometimes the whence is different from the position recorded by us.
+    // We don't know why, but omitting requests in these situations solve problem.
+    // TODO: Figure out why do avcodec input these strange whences.
+    if (whence != avio_ctx->pos)
+      return -1;
 
     // If the destination exceeds the video length.
     if (offset + whence > avio_ctx->stream_len) {
