@@ -49,9 +49,7 @@ extern "C"
  * Adaption to lower version of AVCodec.
  */
 #if LIBAVCODEC_VERSION_INT < AV_VERSION_INT(55, 28, 1)
-#define av_frame_alloc avcodec_alloc_frame
-#define av_frame_free av_free
-#define AV_PIX_FMT_BGR24 PIX_FMT_BGR24
+#error AVCODEC library with version lower than 55.28.1 is not supported.
 #endif
 
 namespace isee {
@@ -77,8 +75,6 @@ class AVIOContextManager {
     if (NULL == buffer)
       throw std::bad_alloc();
 
-    // Here we use our own seek function, but seems like setting it as NULL also works.
-    // TODO: If any problem occurs, please check here.
     ctx = avio_alloc_context(buffer, buf_size, 0, this, &AVIOContextManager::read_packet, NULL, seek);
     if (NULL == ctx) {
       av_free(buffer);
@@ -118,7 +114,7 @@ class AVIOContextManager {
       // Copy the data to the buffer.
       memcpy(buf, avio_ctx->video_stream + avio_ctx->pos, size_to_fill);
       // Modify current location.
-      int ret = seek(opaque, size_to_fill, avio_ctx->pos);
+      int ret = seek(opaque, size_to_fill, SEEK_CUR);
       assert(!ret);
       // Return the size of resting data.
       return size_to_fill;
@@ -136,21 +132,25 @@ class AVIOContextManager {
     // Recover the AVIO context.
     AVIOContextManager *avio_ctx = (AVIOContextManager *) opaque;
 
-    // Sometimes the whence is different from the position recorded by us.
-    // We don't know why, but omitting requests in these situations solve problem.
-    // TODO: Figure out why do avcodec input these strange whences.
-    if (whence != avio_ctx->pos)
-      return -1;
+    switch (whence) {
+      case SEEK_SET:avio_ctx->pos = 0;
+        break;
+      case SEEK_CUR:break;
+      case SEEK_END:avio_ctx->pos = avio_ctx->stream_len;
+        break;
+      case AVSEEK_FORCE:break;  // Ignored.
+      case AVSEEK_SIZE:return avio_ctx->stream_len;
+    }
 
     // If the destination exceeds the video length.
-    if (offset + whence > avio_ctx->stream_len) {
+    if (offset + avio_ctx->pos > avio_ctx->stream_len) {
       // Set the current position to the end of the video.
       avio_ctx->pos = avio_ctx->stream_len;
       // Return failure sign.
       return -1;
     } else {
       // Modify the current position to the destination.
-      avio_ctx->pos = offset + whence;
+      avio_ctx->pos += offset;
       // Return success sign.
       return 0;
     }
