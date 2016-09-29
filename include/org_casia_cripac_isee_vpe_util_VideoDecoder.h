@@ -30,7 +30,7 @@ extern "C" {
  * Signature: ([B)J
  */
 JNIEXPORT jlong JNICALL Java_org_casia_cripac_isee_vpe_util_VideoDecoder_initialize
-  (JNIEnv *, jobject, jbyteArray);
+    (JNIEnv *, jobject, jbyteArray);
 
 /*
  * Class:     org_casia_cripac_isee_vpe_util_VideoDecoder
@@ -38,7 +38,7 @@ JNIEXPORT jlong JNICALL Java_org_casia_cripac_isee_vpe_util_VideoDecoder_initial
  * Signature: (J)[B
  */
 JNIEXPORT jbyteArray JNICALL Java_org_casia_cripac_isee_vpe_util_VideoDecoder_nextFrame
-  (JNIEnv *, jobject, jlong);
+    (JNIEnv *, jobject, jlong);
 
 /*
  * Class:     org_casia_cripac_isee_vpe_util_VideoDecoder
@@ -46,7 +46,7 @@ JNIEXPORT jbyteArray JNICALL Java_org_casia_cripac_isee_vpe_util_VideoDecoder_ne
  * Signature: (J)V
  */
 JNIEXPORT jint JNICALL Java_org_casia_cripac_isee_vpe_util_VideoDecoder_skipFrame
-  (JNIEnv *, jobject, jlong, jint);
+    (JNIEnv *, jobject, jlong, jint);
 
 /*
  * Class:     org_casia_cripac_isee_vpe_util_VideoDecoder
@@ -54,7 +54,7 @@ JNIEXPORT jint JNICALL Java_org_casia_cripac_isee_vpe_util_VideoDecoder_skipFram
  * Signature: (J)V
  */
 JNIEXPORT void JNICALL Java_org_casia_cripac_isee_vpe_util_VideoDecoder_free
-  (JNIEnv *, jobject, jlong);
+    (JNIEnv *, jobject, jlong);
 
 /*
  * Class:     org_casia_cripac_isee_vpe_util_VideoDecoder
@@ -62,7 +62,7 @@ JNIEXPORT void JNICALL Java_org_casia_cripac_isee_vpe_util_VideoDecoder_free
  * Signature: (J)I
  */
 JNIEXPORT jint JNICALL Java_org_casia_cripac_isee_vpe_util_VideoDecoder_getWidth
-  (JNIEnv *, jobject, jlong);
+    (JNIEnv *, jobject, jlong);
 
 /*
  * Class:     org_casia_cripac_isee_vpe_util_VideoDecoder
@@ -70,7 +70,7 @@ JNIEXPORT jint JNICALL Java_org_casia_cripac_isee_vpe_util_VideoDecoder_getWidth
  * Signature: (J)I
  */
 JNIEXPORT jint JNICALL Java_org_casia_cripac_isee_vpe_util_VideoDecoder_getHeight
-  (JNIEnv *, jobject, jlong);
+    (JNIEnv *, jobject, jlong);
 
 /*
  * Class:     org_casia_cripac_isee_vpe_util_VideoDecoder
@@ -78,7 +78,7 @@ JNIEXPORT jint JNICALL Java_org_casia_cripac_isee_vpe_util_VideoDecoder_getHeigh
  * Signature: (J)I
  */
 JNIEXPORT jint JNICALL Java_org_casia_cripac_isee_vpe_util_VideoDecoder_getChannels
-  (JNIEnv *, jobject, jlong);
+    (JNIEnv *, jobject, jlong);
 
 #ifdef __cplusplus
 }

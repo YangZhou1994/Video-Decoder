@@ -1,6 +1,6 @@
 enable_testing ()
 
-add_executable (video_decoder_test video_decoder_test.cpp )
+add_executable(video_decoder_test EXCLUDE_FROM_ALL video_decoder_test.cpp)
 
 target_include_directories (video_decoder_test PUBLIC ${PROJECT_SOURCE_DIR}/include)
 

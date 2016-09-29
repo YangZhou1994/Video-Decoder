@@ -42,3 +42,6 @@ install_manifest.txt
 /Release/
 /DebugTest/
 /ReleaseTest/
+
+# IDEA directories
+.idea
