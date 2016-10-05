@@ -33,6 +33,6 @@ If you want to enable test, run:
 ```Shell
 cmake [-DTEST_VIDEO_PATH=/path/to/your/test/video] .
 make -j 4 test
-cd test_bin
+cd bin
 ctest
 ``` 
