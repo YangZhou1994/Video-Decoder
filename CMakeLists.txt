@@ -9,5 +9,5 @@ add_subdirectory (jni lib)
 set(TEST_VIDEO_PATH CACHE FILEPATH "File path of video for test.")
 add_subdirectory(test bin)
 
-install (FILES ${PROJECT_SOURCE_DIR}/inc/video_decoder.hpp DESTINATION include/video_decoder)
-install (FILES ${PROJECT_SOURCE_DIR}/inc/avio_context_manager.h DESTINATION include/video_decoder)
+install (FILES ${PROJECT_SOURCE_DIR}/include/video_decoder.hpp DESTINATION include/video_decoder)
+install (FILES ${PROJECT_SOURCE_DIR}/include/avio_context_manager.h DESTINATION include/video_decoder)
