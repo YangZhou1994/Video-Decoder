@@ -36,6 +36,7 @@ CMakeFiles/
 CMakeCache.txt
 Testing/
 install_manifest.txt
+*.cmake
 
 # Eclipse directories
 /Debug/
