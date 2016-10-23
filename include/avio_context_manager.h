@@ -68,9 +68,11 @@ class AVIOContextManager {
    */
   inline AVIOContextManager(const unsigned char *video_stream, const int64_t stream_len, size_t buf_size = 32768) :
       pos(0),
-      video_stream(video_stream),
       stream_len(stream_len),
       ctx(NULL) {
+    this->video_stream = new unsigned char[stream_len];
+    memcpy(this->video_stream, video_stream, stream_len * sizeof(unsigned char));
+
     unsigned char *buffer = (unsigned char *) av_malloc(buf_size);
     if (NULL == buffer)
       throw std::bad_alloc();
@@ -90,6 +92,7 @@ class AVIOContextManager {
   inline ~AVIOContextManager(void) {
     av_free(ctx->buffer);
     av_free(ctx);
+    delete[] video_stream;
   }
 
   /**
@@ -165,7 +168,7 @@ class AVIOContextManager {
  private:
   // Internal
   int64_t pos;
-  const unsigned char *video_stream;
+  unsigned char *video_stream;
   int64_t stream_len;
 
   AVIOContext *ctx;

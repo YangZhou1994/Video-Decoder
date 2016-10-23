@@ -23,6 +23,7 @@
 
 #include <opencv2/core/core.hpp>
 #include <opencv2/highgui/highgui.hpp>
+#include <opencv2/imgproc/imgproc.hpp>
 
 #include <video_decoder.hpp>
 
@@ -39,33 +40,19 @@ int main(int argc, char *argv[]) {
 
   const char *video_path = argv[1];
 
-  // Preview the video with OpenCV.
+  // Open the video with OpenCV.
   VideoCapture capture(video_path);
-  int frame_interval = (int) (1000 / capture.get(CV_CAP_PROP_FPS));
-  Mat frame;
-  int cv_frame_cnt = 0;
-  bool display = true;
-  while (true) {
-    capture >> frame;
-    if (frame.empty()) {
-      destroyWindow("OpenCV");
-      break;
-    }
-    ++cv_frame_cnt;
-    if (display) {
-      imshow("OpenCV", frame);
-      int key_pressed = waitKey(frame_interval);
-      if ((key_pressed & ((1 << 8) - 1)) == ' ') {
-        printf("Stop displaying, but continue to decode for counting frames...\n");
-        display = false;
-        destroyWindow("OpenCV");
-        //break;
-      }
-    }
-  }
-  printf("OpenCV decoded %d frames.\n", cv_frame_cnt);
 
-  // Open video file.
+//  while (true) {
+//    Mat frame;
+//    capture >> frame;
+//    if (frame.empty())
+//      break;
+//    imshow("Preview", frame);
+//    waitKey(1);
+//  }
+
+  // Open the video file with VideoDecoder.
   FILE *video_file = fopen(video_path, "rb");
   if (!video_file) {
     fprintf(stderr, "Video file not found!");
@@ -87,15 +74,35 @@ int main(int argc, char *argv[]) {
   VideoDecoder *decoder = new VideoDecoder();
   ret = decoder->Decode(video_buf, (size_t) video_size);
   assert(ret == DECODE_SUCCESS);
-  frame = Mat(decoder->get_height(), decoder->get_width(), CV_8UC3);
-  display = true;
+  Mat vd_frame = Mat(decoder->get_height(), decoder->get_width(), CV_8UC3);
+  Mat cv_frame;
+  Mat canvas;
+  bool display = true;
+  int frame_interval = (int) (1000 / capture.get(CV_CAP_PROP_FPS));
+
+  bool to_cut = true;
+  VideoWriter writer;
+  if (to_cut)
+    writer.open("cut.avi",
+                CV_FOURCC('M', 'P', 'E', 'G'),
+                capture.get(CV_CAP_PROP_FPS),
+                Size(vd_frame.cols, vd_frame.rows));
+
   while (true) {
-    ret = decoder->NextFrame(frame.data);
-    if (ret == DECODE_NO_NEXT_FRAME)
+    ret = decoder->NextFrame(vd_frame.data);
+    capture >> cv_frame;
+    if (ret == DECODE_NO_NEXT_FRAME) {
+      assert(cv_frame.empty());
       break;
+    }
     assert(ret == DECODE_SUCCESS);
-    if (display) {
-      imshow("VideoDecoder", frame);
+    assert(!vd_frame.empty());
+    if (display && vd_frame_cnt >= 0) {
+      resize(vd_frame, canvas, Size(vd_frame.cols >> 1, vd_frame.rows >> 1));
+      imshow("VideoDecoder", canvas);
+      cvMoveWindow("VideoDecoder", 300, 300);
+      resize(cv_frame, canvas, Size(vd_frame.cols >> 1, vd_frame.rows >> 1));
+      imshow("OpenCV", canvas);
       int key_pressed = waitKey(frame_interval);
       if ((key_pressed & ((1 << 8) - 1)) == ' ') {
         printf("Stop displaying, but continue to decode for counting frames...\n");
@@ -103,13 +110,20 @@ int main(int argc, char *argv[]) {
         display = false;
       }
     }
+
+    if (to_cut && vd_frame_cnt > 100 && vd_frame_cnt <= 500)
+      writer << cv_frame;
+    if (to_cut && vd_frame_cnt > 500) {
+      cout << "Finished!" << endl;
+      writer.release();
+      to_cut = false;
+    }
+
     ++vd_frame_cnt;
   }
   printf("VideoDecoder decoded %d frames.\n", vd_frame_cnt);
   destroyWindow("VideoDecoder");
   delete decoder;
-
-  assert(cv_frame_cnt == vd_frame_cnt);
 
   // Test memory leak.
   AVIOContextManager *manager;

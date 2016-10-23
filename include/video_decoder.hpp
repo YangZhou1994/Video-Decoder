@@ -37,6 +37,9 @@
 
 namespace isee {
 
+using std::cout;
+using std::endl;
+
 /**
  * @class VideoDecoder
  * @authors Yang Zhou, Da Li, Ken Yu
@@ -115,36 +118,39 @@ class VideoDecoder {
    *        -2 or a negative AVERROR on failure.
    */
   inline int NextFrame(unsigned char *frame_buf) {
-    // Read a frame to the packet_.
-    if (av_read_frame(avformat_context_, &packet_) < 0) {
-      av_free_packet(&packet_);
-      return DECODE_NO_NEXT_FRAME;
-    }
-
-    if (packet_.stream_index == video_ind_) {
-      int got_picture = 1;
-      // TODO: Change to use avcodec_send_packet and avcodec_receive_frame asynchronously.
-      int ret = avcodec_decode_video2(codec_context_, frame_raw_, &got_picture, &packet_);
-      av_free_packet(&packet_);
-      if (ret < 0) {
-        char err_str[100];
-        av_strerror(ret, err_str, 100);
-        fprintf(stderr, "Error %d (%s) while decoding!\n", ret, err_str);
-        return ret;
+    do {
+      // Read a frame to the packet_.
+      if (av_read_frame(avformat_context_, &packet_) < 0) {
+        av_free_packet(&packet_);
+        return DECODE_NO_NEXT_FRAME;
       }
 
-      if (got_picture)
-        sws_scale(sws_context_, frame_raw_->data, frame_raw_->linesize, 0,
-                  codec_context_->height, frame_rgb_->data,
-                  frame_rgb_->linesize);
+      if (packet_.stream_index == video_ind_) {
+        int got_picture = 1;
+        // TODO: Change to use avcodec_send_packet and avcodec_receive_frame asynchronously.
+        int ret = avcodec_decode_video2(codec_context_, frame_raw_, &got_picture, &packet_);
+        av_free_packet(&packet_);
+        if (ret < 0) {
+          char err_str[100];
+          av_strerror(ret, err_str, 100);
+          fprintf(stderr, "Error %d (%s) while decoding!\n", ret, err_str);
+          return ret;
+        }
 
-      memcpy(frame_buf, frame_rgb_->data[0], getFrameSize());
-      return DECODE_SUCCESS;
-    } else {
-      av_free_packet(&packet_);
-      fprintf(stderr, "Failed to decode!\n");
-      return DECODE_FAILURE;
-    }
+        if (got_picture) {
+          sws_scale(sws_context_, frame_raw_->data, frame_raw_->linesize, 0,
+                    codec_context_->height, frame_rgb_->data,
+                    frame_rgb_->linesize);
+
+          memcpy(frame_buf, frame_rgb_->data[0], getFrameSize());
+          return DECODE_SUCCESS;
+        }
+      } else {
+        // This packet is not on the video stream.
+        // Omit it and read a next packet until it is on the video stream.
+        av_free_packet(&packet_);
+      }
+    } while (true);
   }
 
   /**

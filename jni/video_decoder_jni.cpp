@@ -39,6 +39,7 @@ JNIEXPORT jlong JNICALL Java_org_cripac_isee_vpe_util_VideoDecoder_initialize(
     jclass rte_class = env->FindClass("java/lang/RuntimeException");
     env->ThrowNew(rte_class, ss.str().c_str());
   }
+  delete[] contentdata;
   return (jlong) p;
 }
 
@@ -57,13 +58,13 @@ JNIEXPORT jbyteArray JNICALL Java_org_cripac_isee_vpe_util_VideoDecoder_nextFram
   return jFrameBytes;
 }
 
-JNIEXPORT int JNICALL Java_org_cripac_isee_vpe_util_VideoDecoder_skipFrame
-    (JNIEnv *env, jobject obj, jlong pointer, jint num_frames) {
+JNIEXPORT int JNICALL Java_org_cripac_isee_vpe_util_VideoDecoder_skipFrame(
+    JNIEnv *env, jobject obj, jlong pointer, jint num_frames) {
   return ((VideoDecoder *) pointer)->SkipFrame(num_frames);
 }
 
-JNIEXPORT void JNICALL Java_org_cripac_isee_vpe_util_VideoDecoder_free(JNIEnv *env,
-                                                                             jobject obj, jlong pointer) {
+JNIEXPORT void JNICALL Java_org_cripac_isee_vpe_util_VideoDecoder_free(
+    JNIEnv *env, jobject obj, jlong pointer) {
   delete (VideoDecoder *) pointer;
 }
 

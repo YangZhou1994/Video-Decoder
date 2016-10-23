@@ -46,3 +46,8 @@ install_manifest.txt
 
 # IDEA directories
 .idea
+
+# Test resources
+*.mp4
+*.h264
+*.avi
